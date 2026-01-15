@@ -25,6 +25,7 @@ namespace Script.Pivot
         public void OpenWall()
         {
             isOpen = true;
+            print("open");
         }
         public void CloseWall()
         {

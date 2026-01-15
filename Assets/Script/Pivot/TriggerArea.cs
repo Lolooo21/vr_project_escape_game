@@ -1,36 +1,42 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerArea : MonoBehaviour
+
+namespace Script.Pivot
 {
-    public UnityEvent OnEnter;
-    public UnityEvent OnExit;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class TriggerArea : MonoBehaviour
     {
-        
-    }
+        public UnityEvent OnEnter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public UnityEvent OnExit;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            OnEnter.Invoke();
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            OnExit.Invoke();
         }
-        
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                OnEnter.Invoke();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                OnExit.Invoke();
+            }
+
+        }
     }
 }
