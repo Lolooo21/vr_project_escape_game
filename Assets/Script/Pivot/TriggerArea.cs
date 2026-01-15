@@ -10,6 +10,8 @@ namespace Script.Pivot
 
         public UnityEvent OnExit;
 
+        public bool hasKey;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -28,6 +30,12 @@ namespace Script.Pivot
             {
                 OnEnter.Invoke();
             }
+
+            if (other.CompareTag("Player") && hasKey && other.CompareTag("Key"))
+            {
+                OnEnter.Invoke();
+            }
+                
         }
 
         private void OnTriggerExit(Collider other)
